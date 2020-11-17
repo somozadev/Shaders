@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8228388789449917858
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598e2d32e2c7b0c418e030c3236d663a, type: 3}
+  m_Name: ChromaticAberration
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  quality:
+    m_OverrideState: 0
+    m_Value: 1
+  spectralLut:
+    m_OverrideState: 0
+    m_Value: {fileID: 0}
+  intensity:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
+    max: 1
+  m_MaxSamples:
+    m_OverrideState: 0
+    m_Value: 6
+    min: 3
+    max: 24
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,9 +45,9 @@ MonoBehaviour:
   components:
   - {fileID: 114527594671542966}
   - {fileID: 114339849572665496}
-  - {fileID: 114914201461855468}
   - {fileID: 114698408567805600}
   - {fileID: 617365763601477730}
+  - {fileID: -8228388789449917858}
 --- !u!114 &114339849572665496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34,10 +64,10 @@ MonoBehaviour:
   m_AdvancedMode: 0
   skyType:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 3
   skyAmbientMode:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   fogType:
     m_OverrideState: 1
     m_Value: 2
@@ -59,6 +89,11 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 700
     min: 0
+  directionalTransmissionMultiplier:
+    m_OverrideState: 0
+    m_Value: 1
+    min: 0
+    max: 1
   cascadeShadowSplitCount:
     m_OverrideState: 1
     m_Value: 4
@@ -66,13 +101,13 @@ MonoBehaviour:
     max: 4
   cascadeShadowSplit0:
     m_OverrideState: 1
-    m_Value: 0.005
+    m_Value: 0
   cascadeShadowSplit1:
     m_OverrideState: 1
-    m_Value: 0.015
+    m_Value: 0.29700002
   cascadeShadowSplit2:
     m_OverrideState: 1
-    m_Value: 0.3
+    m_Value: 0.60400003
   cascadeShadowBorder0:
     m_OverrideState: 1
     m_Value: 0
@@ -97,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2150ee00179b2f4418ea8b21a7e98eea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   m_AdvancedMode: 0
   colorMode:
     m_OverrideState: 1
@@ -107,6 +142,12 @@ MonoBehaviour:
     m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     hdr: 0
     showAlpha: 1
+    showEyeDropper: 1
+  tint:
+    m_OverrideState: 0
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    hdr: 1
+    showAlpha: 0
     showEyeDropper: 1
   density:
     m_OverrideState: 1
@@ -232,19 +273,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   m_AdvancedMode: 0
+  quality:
+    m_OverrideState: 1
+    m_Value: 2
+  threshold:
+    m_OverrideState: 0
+    m_Value: 0
+    min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.251
     min: 0
     max: 1
   scatter:
-    m_OverrideState: 0
-    m_Value: 0.7
+    m_OverrideState: 1
+    m_Value: 0.622
     min: 0
     max: 1
   tint:
     m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 0.3962264, g: 0.3205586, b: 0.1476504, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
@@ -255,15 +303,12 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
     min: 0
-  highQualityFiltering:
+  anamorphic:
     m_OverrideState: 0
     m_Value: 1
-  resolution:
+  m_Resolution:
     m_OverrideState: 0
     m_Value: 2
-  prefilter:
-    m_OverrideState: 0
-    m_Value: 0
-  anamorphic:
+  m_HighQualityFiltering:
     m_OverrideState: 0
     m_Value: 1
